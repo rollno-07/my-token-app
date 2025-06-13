@@ -214,9 +214,10 @@ export default function HomePage() {
                         {selectedToken.name}
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-full">
+                    <DropdownMenuContent className="w-full bg-radium-600 ">
                       {TOKENS.map((token) => (
                         <DropdownMenuItem
+                        className="hover:bg-radium-400"
                           key={token.symbol}
                           onClick={() => setSelectedToken(token)}
                         >
