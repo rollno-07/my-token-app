@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react'; // Import useState and useEffect
 import { useAccount, useConnect, useDisconnect } from 'wagmi';
-import { Button } from '../../../my-token-pp/src/components/ui/button'; // Shadcn Button
+import { Button } from '@/components/ui/button'; // Shadcn Button
 import { toast } from 'sonner'; // Import toast from sonner
 
 export function WalletConnectButton() {
