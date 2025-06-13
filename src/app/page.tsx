@@ -134,7 +134,7 @@ export default function HomePage() {
       refetchEthBalance();
       refetchTokenBalance();
     }
-  }, [isConfirmed]);
+  }, [isConfirmed, hash, refetchTokenBalance, refetchEthBalance]);
 
   useEffect(() => {
     if (sendError) {
@@ -178,8 +178,8 @@ export default function HomePage() {
 
   const displayBalance =
     selectedToken.address === undefined
-      ? formatUnits(ethBalance?.value || 0n, 18)
-      : formatUnits((tokenBalance || 0n) as bigint, selectedToken.decimals);
+      ? formatUnits(BigInt(ethBalance?.value || 0), 18)
+      : formatUnits(BigInt(tokenBalance || 0), selectedToken.decimals);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-4">
@@ -294,7 +294,7 @@ export default function HomePage() {
         </CardContent>
 
         <CardFooter className="text-center text-xs text-zinc-500">
-          Ensure you're on Sepolia Testnet
+          {"Ensure you're on Sepolia Testnet"}
         </CardFooter>
       </Card>
     </div>
